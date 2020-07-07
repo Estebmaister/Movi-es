@@ -1,0 +1,135 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: grid;
+  grid-template: 100px 1fr 50px/ 100px 1fr;
+  grid-template-areas: "header header"
+             "left contenido"
+             "footer footer";
+  height: 100vh;
+}
+
+.header{
+  grid-area: header;
+}
+
+.header-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left{
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+    margin-left: 50px;
+
+}
+
+.header-left a{
+  text-decoration: none;
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.header-container input{
+    width: 500px;
+    outline: none;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.Bambi{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.Bambi p{
+  margin-right: 10px;
+}
+
+.Bambi img{
+  border-radius: 25px;
+}
+
+.left{
+  grid-area: left;
+  background-color: red;
+}
+
+.left-containter{
+  position: fixed;
+  text-align: center;
+  left: 9px;
+  top: 130px;
+}
+
+.left-containter div{
+  margin-top: 20px;
+}
+.left-containter div img{
+background: red;
+}
+
+.contenido{
+  grid-area: contenido;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 400px));
+  box-shadow: 1px -2px 7px 0px rgba(0, 0, 0, 1);
+  grid-gap: 30px;
+  justify-content: center;
+  padding: 30px;
+}
+
+.movie{
+  cursor: pointer;
+  position: relative;
+}
+
+.movie-overlay{
+  background: rgba(255, 0, 0, 0.5);
+  position: absolute;
+  color: white;
+  text-decoration: none;
+  left: 0;
+  top: 142px;
+  bottom: 0;
+  right: 0;
+  transition: top 0.5s;
+}
+
+.movie-overlay:hover{
+  top: 0;
+}
+
+
+.movie img {
+  width: 100%;
+  vertical-align: top;
+}
+
+.footer{
+  grid-area: footer;
+  background-color:black;
+}
+
+@media screen and (max-width: 768px){
+  .contenido{
+    grid-gap: 3px;
+  }
+  .movie-overlay p{
+    display: none;
+  }
+.movie-overlay:hover p{
+    display: block;
+  }
+}
